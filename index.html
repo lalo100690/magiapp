@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+
+	<div id="full"></div>
+
+	<div class="carta">
+		<b id="color"></b>
+		<b id="numero"></b>
+	</div>
+
+	<img id="img-carta">
+
+</body>
+
+<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+		font-family: 'Arial'
+	}	
+
+	img{
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		z-index: 99999;
+		width:80%;
+		opacity: .9;
+		margin-left: 10%;
+		margin-top: 15%;
+		opacity: 0;
+		transition: .2s all;
+	}
+
+	body{
+		background:black;
+	}
+
+	.carta{
+		width: 100%;
+		position: fixed;
+		text-align:right;
+		color: rgba(255,255,255,.1);
+		font-size: .5em;
+		padding: 10px;
+		box-sizing: border-box;
+		z-index: 999;
+	}
+	button{
+		position: fixed;
+		top: 50%;
+
+	}
+	#full{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background:black;
+	}
+</style>
+
+<script>
+	window.addEventListener('load',cartas, true);
+
+	function cartas(){
+		color = 0;
+		numero = 0;
+		full = document.getElementById('full');
+		full.addEventListener("touchstart", mostrar, true);
+		cambioColor();
+		cambioNumero();
+	}
+
+	function cambioNumero(){
+		numero++;
+		if (numero<14) {
+			document.getElementById('numero').innerHTML = numero;
+		}else{
+			numero = 1;
+			document.getElementById('numero').innerHTML = numero;
+		}
+		setTimeout(function(){
+			cambioNumero()
+		},1000)
+	}
+
+	function cambioColor(){
+		color++;
+		if (color<5) {
+			document.getElementById('color').innerHTML = color;
+		}else{
+			color = 0;
+			document.getElementById('color').innerHTML = color;
+		}
+		setTimeout(function(){
+			cambioColor()
+		},13000)
+	}
+
+	function mostrar(){
+		document.getElementById('img-carta').src="imgs/" + color + numero + '.png';
+		document.getElementById('img-carta').style.opacity = "1";
+	}
+</script>
+</html>
