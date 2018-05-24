@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.phonegap.helloworld"
+        version   = "1.0.0">
+
+    <name>MagicAPP</name>
+
+    <description>
+       Aplicación de magia
+    </description>
+
+    <author href="http//uaq.mx/informatica" email="lalo_100690@hotmai.com">
+        Taller de Aplicaciones Móviles en la nube
+    </author>
+
+    <preference name="permissions"                value="none"/>
+    <preference name="orientation"                value="portrait" />        
+    <preference name="target-device"              value="universal" />      
+    <preference name="fullscreen"                 value="true" />           
+    <preference name="android-installLocation"    value="auto" />           
+    
+    <!-- Plugins -->
+
+    <!-- Core plugins -->
+    <!-- <plugin name="cordova-plugin-battery-status" /> -->
+    <!-- <plugin name="cordova-plugin-camera" /> -->
+    <!-- <plugin name="cordova-plugin-media-capture" /> -->
+    <plugin name="cordova-plugin-console" />
+    <!-- <plugin name="cordova-plugin-contacts" /> -->
+    <!-- <plugin name="cordova-plugin-device" /> -->
+    <!-- <plugin name="cordova-plugin-device-motion" /> -->
+    <!-- <plugin name="cordova-plugin-device-orientation" /> -->
+    <!-- <plugin name="cordova-plugin-dialogs" /> -->
+    <!-- <plugin name="cordova-plugin-file" /> -->
+    <!-- <plugin name="cordova-plugin-file-transfer" /> -->
+    <!-- <plugin name="cordova-plugin-geolocation" /> -->
+    <!-- <plugin name="cordova-plugin-globalization" /> -->
+    <!-- <plugin name="cordova-plugin-inappbrowser" /> -->
+    <!-- <plugin name="cordova-plugin-media" /> -->
+    <plugin name="cordova-plugin-network-information" />
+    <!-- <plugin name="cordova-plugin-splashscreen" /> -->
+    <plugin name="cordova-plugin-vibration" />
+
+
+    <!-- Define app icon for each platform. -->
+    <icon src="icono.png" />
+    <icon src="icono.png"   gap:platform="android"    gap:qualifier="ldpi" />
+    <icon src="icono.png"   gap:platform="android"    gap:qualifier="mdpi" />
+    <icon src="icono.png"   gap:platform="android"    gap:qualifier="hdpi" />
+    <icon src="icono.png"  gap:platform="android"    gap:qualifier="xhdpi" />
+    
+
+    <!-- Define app splash screen for each platform. -->
+
+    <access origin="*"/>
+   
+    <plugin name="cordova-plugin-whitelist" version="1" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+
+</widget>
